@@ -12,10 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var rootCoordinator: RootCoodinator!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window!.backgroundColor = UIColor.white
+        self.window!.makeKeyAndVisible()
+        self.rootCoordinator = RootCoodinator(window: self.window!)
+        self.rootCoordinator.startApp()
+        
         return true
     }
 
